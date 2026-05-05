@@ -59,74 +59,72 @@ function isLoggedIn(req) {
 }
 
 // Shared page styles
-const styles = `
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 420px;
-      text-align: center;
-    }
-    h1 { color: #2d3748; margin-bottom: 24px; font-size: 1.8rem; }
-    h2 { color: #4a5568; margin-bottom: 20px; font-size: 1.3rem; }
-    input {
-      width: 100%;
-      padding: 12px 16px;
-      margin: 8px 0;
-      border: 2px solid #e2e8f0;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color 0.2s;
-      outline: none;
-    }
-    input:focus { border-color: #667eea; }
-    button, .btn {
-      display: inline-block;
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0 4px;
-      background: #667eea;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    button:hover, .btn:hover { background: #5a67d8; }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #667eea;
-      color: #667eea;
-    }
-    .btn-outline:hover { background: #667eea; color: white; }
-    .btn-danger {
-      background: #e53e3e;
-    }
-    .btn-danger:hover { background: #c53030; }
-    a { color: #667eea; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .error { color: #e53e3e; margin: 12px 0; font-size: 0.95rem; }
-    .member-img { width: 100%; max-width: 300px; border-radius: 10px; margin: 16px auto; display: block; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
-    .divider { margin: 12px 0; color: #a0aec0; }
-    p { color: #4a5568; margin: 8px 0; }
-  </style>
-`;
+const styles = `<style>
+
+body{
+font-family:Tahoma,sans-serif;
+background:#c0c0c0;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px
+}
+
+.card{
+background:#fff;
+border:2px solid #808080;
+padding:20px;
+width:320px;
+text-align:center
+}
+
+h1,h2{
+color:#000080;
+font-size:18px
+}
+
+input{
+width:100%;
+padding:6px;
+margin:6px 0;
+border:1px solid #808080
+}
+
+button,.btn{
+width:100%;
+padding:6px;
+margin-top:6px;
+background:#d4d0c8;
+border:2px solid #808080;
+cursor:pointer;
+text-decoration:none;
+display:block;
+box-sizing:border-box
+}
+
+button:hover,.btn:hover{
+background:#ece9d8
+}
+
+.member-img{
+width:250px;
+height:200px;
+object-fit:cover;
+border:1px solid #808080;
+margin:10px auto;
+display:block
+}
+
+a{
+color:#000080
+}
+
+.error{
+color:red;
+font-size:12px
+}
+</style>`;
 
 function page(title, body) {
   return `<!DOCTYPE html>
