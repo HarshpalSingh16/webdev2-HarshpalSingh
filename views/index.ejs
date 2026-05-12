@@ -1,0 +1,21 @@
+<%- include('templates/header') %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-md-5">
+      <div class="card">
+        <% if (user) { %>
+          <h1>Hello, <%= user %>!</h1>
+          <p>Welcome back to the Members Club.</p>
+          <a href="/members" class="btn btn-xp">Go to Members Area</a>
+          <a href="/logout" class="btn btn-xp mt-1">Sign Out</a>
+        <% } else { %>
+          <h1>Members Club</h1>
+          <p>Please sign up or log in to access the members area.</p>
+          <a href="/signup" class="btn btn-xp">Sign Up</a>
+          <a href="/login" class="btn btn-xp mt-1">Log In</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('templates/footer') %>

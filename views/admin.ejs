@@ -1,0 +1,27 @@
+<%- include('templates/header') %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-9">
+      <div class="card">
+        <h1>Admin Panel</h1>
+        <p>All registered users:</p>
+        <table class="table table-sm table-bordered mt-2" style="font-size:13px">
+          <thead style="background:#000080;color:#fff">
+            <tr>
+              <th class="py-1 px-2">Name</th>
+              <th class="py-1 px-2">Email</th>
+              <th class="py-1 px-2">Type</th>
+              <th class="py-1 px-2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let i = 0; i < users.length; i++) { %>
+              <%- include('templates/user', { user: users[i] }) %>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('templates/footer') %>

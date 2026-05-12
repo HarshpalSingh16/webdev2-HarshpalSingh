@@ -1,0 +1,12 @@
+<tr>
+  <td class="py-1 px-2" style="font-size:13px"><%= user.name %></td>
+  <td class="py-1 px-2" style="font-size:13px"><%= user.email %></td>
+  <td class="py-1 px-2" style="font-size:13px"><%= user.user_type || 'user' %></td>
+  <td class="py-1 px-2">
+    <% if (user.user_type === 'admin') { %>
+      <a href="/admin/demote?email=<%= user.email %>" class="btn btn-xp-sm">Demote</a>
+    <% } else { %>
+      <a href="/admin/promote?email=<%= user.email %>" class="btn btn-xp-sm">Promote</a>
+    <% } %>
+  </td>
+</tr>
