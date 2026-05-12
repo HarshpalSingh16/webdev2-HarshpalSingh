@@ -156,7 +156,7 @@ app.get('/members', (req, res) => {
 app.get('/admin', async (req, res) => {
   if (!isLoggedIn(req)) return res.redirect('/login');
   if (!isAdmin(req)) {
-    return res.status(403).render('404', {
+    return res.status(403).render('403', {
       title: 'Access Denied',
       user: req.session.name,
       isAdmin: false,
