@@ -37,10 +37,14 @@ app.use(session({
     mongoUrl: mongoUrl,
     dbName: process.env.MONGODB_DATABASE,
     collectionName: 'sessions',
-    crypto: { secret: process.env.MONGODB_SESSION_SECRET },
-    ttl: 3600 // 1 hour
+    crypto: {
+      secret: process.env.MONGODB_SESSION_SECRET
+    },
+    ttl: 3600
   }),
-  cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
+  cookie: {
+    maxAge: 60 * 60 * 1000
+  }
 }));
 
 function isLoggedIn(req) {
