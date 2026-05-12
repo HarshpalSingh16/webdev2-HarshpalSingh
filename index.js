@@ -29,6 +29,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
+app.set('trust proxy', 1);
 app.use(session({
   secret: process.env.NODE_SESSION_SECRET,
   resave: false,
@@ -38,9 +39,9 @@ app.use(session({
     dbName: process.env.MONGODB_DATABASE,
     collectionName: 'sessions',
     crypto: { secret: process.env.MONGODB_SESSION_SECRET },
-    ttl: 3600 // 1 hour
+    ttl: 3600
   }),
-  cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
+  cookie: { maxAge: 60 * 60 * 1000, secure: true, sameSite: 'none' }
 }));
 
 function isLoggedIn(req) {
